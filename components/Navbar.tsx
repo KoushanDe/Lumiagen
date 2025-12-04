@@ -67,7 +67,7 @@ const Navbar: React.FC = () => {
             </div>
             
             {/* Logo Text Glow (Blue) */}
-            <span className="relative text-xl font-bold tracking-tight text-white group-hover:text-royal-500 transition-colors z-10 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]">
+            <span className="relative text-xl font-bold tracking-tight text-white group-hover:text-white transition-colors z-10 group-hover:drop-shadow-[0_0_10px_rgba(59,130,246,0.8)]">
               Lumiagen
             </span>
           </div>

@@ -32,7 +32,7 @@ const Contact: React.FC = () => {
       id="contact" 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative pt-32 pb-16 bg-void overflow-hidden group"
+      className="relative pt-20 pb-10 bg-void overflow-hidden group"
     >
         {/* Flashlight Grid Background */}
         <div className="absolute inset-0 pointer-events-none">
@@ -99,7 +99,7 @@ const Contact: React.FC = () => {
                             </div>
                             <div>
                                 <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Base of Operations</p>
-                                <p className="text-white font-mono text-sm">Bangkok, Thailand</p>
+                                <p className="text-white font-mono text-sm">Bengaluru, India</p>
                             </div>
                         </div>
                     </div>
@@ -143,7 +143,7 @@ const Contact: React.FC = () => {
                                  </button>
                                  
                                  <p className="mt-4 text-[10px] text-slate-500 uppercase tracking-wider font-semibold">
-                                    Response time: &lt; 24 Hours
+                                    Response time: &lt; 12 Hours
                                  </p>
                              </div>
                         </div>
