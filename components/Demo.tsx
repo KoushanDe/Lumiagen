@@ -22,8 +22,8 @@ const Demo: React.FC = () => {
           </p>
         </div>
 
-        {/* Video Container - Compact max-w-3xl */}
-        <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface pb-[56.25%] h-0 group on-scroll delay-200">
+        {/* Video Container - Compact max-w-2xl with strict 16:9 aspect ratio */}
+        <div className="relative w-full max-w-2xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface aspect-video group on-scroll delay-200">
           {!isPlaying ? (
             <div 
               className="absolute top-0 left-0 w-full h-full z-20 cursor-pointer group"

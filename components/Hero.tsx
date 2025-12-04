@@ -89,14 +89,14 @@ const Hero: React.FC = () => {
         <div className="absolute bottom-1/3 left-1/4 w-1 h-1 bg-royal-500 rounded-full animate-float delay-300 opacity-50"></div>
       </div>
 
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10 text-center">
+      <div className="w-full px-6 md:px-12 lg:px-24 relative z-10 text-center">
         
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm animate-enter hover:border-accent-400/30 transition-all cursor-default shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           <div className="w-2 h-2 rounded-full bg-accent-400 animate-pulse shadow-[0_0_10px_#2DD4BF]"></div>
           <span className="text-xs font-bold tracking-widest uppercase text-slate-300">Secure Your Early Access Spot</span>
         </div>
 
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white mb-6 leading-[1.1] group cursor-default animate-enter [animation-delay:150ms] relative">
+        <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold tracking-tight text-white mb-6 leading-[1.1] group cursor-default animate-enter [animation-delay:150ms] relative">
           <span className="relative inline-block transition-all duration-500 ease-out hover:tracking-wide">
              <span className="absolute inset-0 blur-xl bg-white/10 opacity-50 animate-pulse-slow"></span>
              <span className="text-shimmer">Automate the Boring,</span>
@@ -108,7 +108,7 @@ const Hero: React.FC = () => {
           </span>
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light animate-enter [animation-delay:300ms]">
+        <p className="text-lg md:text-xl xl:text-2xl text-slate-400 max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto mb-10 leading-relaxed font-light animate-enter [animation-delay:300ms]">
           Lumiagen builds high-performance AI agents and custom web architectures. 
           Stop trading time for money—deploy systems that work while you sleep.
         </p>
