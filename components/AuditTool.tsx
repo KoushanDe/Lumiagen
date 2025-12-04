@@ -60,7 +60,6 @@ const AuditTool: React.FC = () => {
   };
 
   useEffect(() => {
-    // Only scroll the log container, not the entire page
     if (logsContainerRef.current) {
       logsContainerRef.current.scrollTop = logsContainerRef.current.scrollHeight;
     }
@@ -68,10 +67,8 @@ const AuditTool: React.FC = () => {
 
   return (
     <section id="audit-tool" className="py-20 relative overflow-hidden bg-void">
-      {/* Immersive Background */}
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05]"></div>
       
-      {/* Data Rain / Shooting Stars Background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
           <div className="absolute top-0 left-[15%] w-[1px] h-full bg-gradient-to-b from-transparent via-accent-400/20 to-transparent opacity-0 animate-shoot"></div>
           <div className="absolute top-0 left-[35%] w-[1px] h-full bg-gradient-to-b from-transparent via-royal-500/20 to-transparent opacity-0 animate-shoot [animation-delay:1.5s]"></div>
@@ -79,7 +76,7 @@ const AuditTool: React.FC = () => {
           <div className="absolute top-0 left-[85%] w-[1px] h-full bg-gradient-to-b from-transparent via-royal-500/20 to-transparent opacity-0 animate-shoot [animation-delay:0.5s]"></div>
       </div>
 
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="text-center mb-12 on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-royal-500/10 border border-royal-500/20 rounded-full mb-4">
              <div className="w-1.5 h-1.5 bg-royal-500 rounded-full animate-pulse"></div>
@@ -91,20 +88,17 @@ const AuditTool: React.FC = () => {
           </p>
         </div>
 
-        {/* Holographic Form Container */}
         <div className="relative group on-scroll delay-200">
           <div className="absolute -inset-0.5 bg-gradient-to-r from-accent-400 to-royal-500 rounded-2xl blur opacity-20 group-hover:opacity-40 transition duration-500"></div>
-          <div className="relative glass-panel rounded-2xl p-1 shadow-2xl overflow-hidden">
+          <div className="relative glass-panel rounded-2xl p-1 shadow-2xl overflow-hidden max-w-5xl mx-auto">
             
             <div className="bg-void/80 rounded-xl p-8 md:p-10 border border-white/5 relative">
-              {/* Corner Accents */}
               <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-accent-400/30 rounded-tl-xl"></div>
               <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent-400/30 rounded-tr-xl"></div>
               <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-accent-400/30 rounded-bl-xl"></div>
               <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent-400/30 rounded-br-xl"></div>
 
               {status === AuditStatus.LOADING ? (
-                /* Terminal View */
                 <div className="h-[300px] font-mono text-sm p-4 bg-black/50 rounded-lg border border-accent-400/20 shadow-[inset_0_0_20px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col relative">
                     <div className="absolute top-0 left-0 w-full h-[2px] bg-accent-400/50 shadow-[0_0_10px_#2DD4BF] animate-scan"></div>
                     <div 
@@ -123,7 +117,6 @@ const AuditTool: React.FC = () => {
                     </div>
                 </div>
               ) : (
-                /* Form View */
                 <form onSubmit={handleSubmit} className="space-y-8">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                     <div className="space-y-3">
@@ -179,20 +172,17 @@ const AuditTool: React.FC = () => {
         </div>
       </div>
 
-      {/* Blueprint Result Modal */}
       {result && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md animate-in fade-in duration-300">
           <div className="absolute inset-0" onClick={closeResult}></div>
           
           <div className="relative w-full max-w-4xl max-h-[90vh] bg-[#050505] border border-accent-400/30 rounded-xl shadow-[0_0_100px_rgba(45,212,191,0.1)] flex flex-col overflow-hidden animate-in zoom-in-95 duration-500 group/modal">
             
-            {/* Scanning Line Animation */}
             <div className="pointer-events-none absolute inset-0 z-0 opacity-10">
                 <div className="absolute inset-0 bg-[linear-gradient(transparent_50%,rgba(45,212,191,0.2)_50%)] bg-[size:100%_4px]"></div>
                 <div className="absolute top-0 left-0 w-full h-1 bg-accent-400 shadow-[0_0_20px_#2DD4BF] animate-scan opacity-50"></div>
             </div>
 
-            {/* Header */}
             <div className="flex items-start justify-between p-6 border-b border-white/10 bg-white/5 relative z-10">
               <div className="flex items-center gap-4">
                  <div className="w-12 h-12 bg-accent-400/10 border border-accent-400/30 rounded flex items-center justify-center">
@@ -214,11 +204,9 @@ const AuditTool: React.FC = () => {
               </button>
             </div>
 
-            {/* Content */}
             <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8 custom-scrollbar relative z-10">
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                 {/* Main Analysis */}
                  <div className="md:col-span-2 space-y-6">
                     <div>
                         <h4 className="text-xs font-bold text-accent-400 uppercase tracking-wider mb-3 flex items-center gap-2 border-b border-accent-400/20 pb-2">
@@ -242,7 +230,6 @@ const AuditTool: React.FC = () => {
                     </div>
                  </div>
 
-                 {/* Metrics Sidebar */}
                  <div className="md:col-span-1 space-y-4">
                     <div className="p-5 bg-gradient-to-br from-royal-500/10 to-transparent border border-royal-500/20 rounded-lg">
                         <p className="text-[10px] text-royal-400 font-bold uppercase tracking-wider mb-2">Estimated Impact</p>
@@ -269,7 +256,6 @@ const AuditTool: React.FC = () => {
 
             </div>
 
-            {/* Footer */}
             <div className="p-4 border-t border-white/10 bg-white/5 relative z-10 flex flex-col md:flex-row gap-4 items-center justify-between">
               <p className="text-xs text-slate-500 font-mono hidden md:block">CONFIDENTIAL // LUMIAGEN GENERATED REPORT</p>
               <a 

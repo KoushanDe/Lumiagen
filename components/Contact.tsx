@@ -34,12 +34,9 @@ const Contact: React.FC = () => {
       onMouseMove={handleMouseMove}
       className="relative pt-20 pb-10 bg-void overflow-hidden group"
     >
-        {/* Flashlight Grid Background */}
         <div className="absolute inset-0 pointer-events-none">
-             {/* Layer 1: Base Grid */}
             <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:40px_40px]"></div>
 
-            {/* Layer 2: Highlight Grid */}
             <div 
               className="absolute inset-0 bg-[linear-gradient(to_right,rgba(45,212,191,0.15)_1px,transparent_1px),linear-gradient(to_bottom,rgba(59,130,246,0.15)_1px,transparent_1px)] bg-[size:40px_40px]"
               style={{
@@ -49,10 +46,9 @@ const Contact: React.FC = () => {
             ></div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
             
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
-                {/* Left Column: Connect */}
                 <div className="on-scroll-left">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
                        Ready to <span className="text-gradient">Architect the Future?</span>
@@ -62,7 +58,6 @@ const Contact: React.FC = () => {
                     </p>
 
                     <div className="space-y-4">
-                        {/* Interactive Data Card: Email */}
                         <div className="group/card relative p-4 bg-white/5 border border-white/10 rounded-xl hover:border-accent-400/50 transition-all duration-300 hover:bg-white/[0.07] flex items-center justify-between">
                              <div className="flex items-center gap-4">
                                 <div className="w-10 h-10 rounded-lg bg-accent-400/10 flex items-center justify-center text-accent-400 group-hover/card:shadow-[0_0_15px_rgba(45,212,191,0.3)] transition-all">
@@ -81,7 +76,6 @@ const Contact: React.FC = () => {
                              </button>
                         </div>
 
-                         {/* Interactive Data Card: WhatsApp */}
                          <a href="https://wa.me/918910453538" target="_blank" rel="noreferrer" className="group/card relative p-4 bg-white/5 border border-white/10 rounded-xl hover:border-green-500/50 transition-all duration-300 hover:bg-white/[0.07] flex items-center gap-4">
                             <div className="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 group-hover/card:shadow-[0_0_15px_rgba(34,197,94,0.3)] transition-all">
                                 <MessageCircle className="w-5 h-5" />
@@ -92,7 +86,6 @@ const Contact: React.FC = () => {
                             </div>
                         </a>
 
-                        {/* Interactive Data Card: Location */}
                         <div className="group/card relative p-4 bg-white/5 border border-white/10 rounded-xl hover:border-royal-500/50 transition-all duration-300 hover:bg-white/[0.07] flex items-center gap-4">
                             <div className="w-10 h-10 rounded-lg bg-royal-500/10 flex items-center justify-center text-royal-500 group-hover/card:shadow-[0_0_15px_rgba(59,130,246,0.3)] transition-all">
                                 <MapPin className="w-5 h-5" />
@@ -105,23 +98,17 @@ const Contact: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Right Column: Fast-Track Action - Glass Finish */}
                 <div className="on-scroll-right delay-200">
                     <div className="relative h-full rounded-2xl p-[1px] bg-gradient-to-b from-white/10 to-transparent shadow-2xl group/box">
                         
-                        {/* Hover Border Gradient */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent-400/30 to-royal-500/30 opacity-0 group-hover/box:opacity-100 transition-opacity duration-700 rounded-2xl"></div>
 
-                        {/* Glass Container - Updated for Darker, Thicker Look with Blue Tint */}
                         <div className="relative h-full rounded-2xl bg-void/60 backdrop-blur-2xl p-8 flex flex-col justify-center items-center text-center border border-white/10 overflow-hidden">
                              
-                             {/* Subtle Blue Tint Overlay */}
                              <div className="absolute inset-0 bg-gradient-to-b from-royal-500/5 to-transparent pointer-events-none"></div>
 
-                             {/* Noise Texture */}
                              <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.03] pointer-events-none"></div>
                              
-                             {/* Top Gloss/Sheen */}
                              <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-30 pointer-events-none"></div>
 
                              <div className="relative z-10 w-full flex flex-col items-center">
@@ -151,7 +138,6 @@ const Contact: React.FC = () => {
                 </div>
             </div>
 
-            {/* Footer Bar */}
             <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
                 <div className="flex items-center gap-2">
                     <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>

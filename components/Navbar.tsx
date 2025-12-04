@@ -52,7 +52,7 @@ const Navbar: React.FC = () => {
           : 'bg-transparent border-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div 
@@ -87,15 +87,15 @@ const Navbar: React.FC = () => {
 
           {/* CTA */}
           <div className="hidden md:block">
-            <button 
-              onClick={() => scrollToSection('contact')}
-              className="px-6 py-2.5 bg-void border text-xs font-bold uppercase tracking-wider rounded transition-all duration-500
+            <a 
+              href="mailto:koushan@lumiagen.com?subject=Consultation%20Request"
+              className="inline-block px-6 py-2.5 bg-void border text-xs font-bold uppercase tracking-wider rounded transition-all duration-500
                          border-accent-400/50 text-white 
                          shadow-[0_0_20px_#2DD4BF] animate-pulse-slow
                          hover:border-royal-500 hover:shadow-[0_0_30px_#3B82F6] hover:bg-royal-500/10 hover:text-white hover:animate-none"
             >
               Book Call
-            </button>
+            </a>
           </div>
 
           {/* Mobile Menu Button */}
@@ -122,12 +122,12 @@ const Navbar: React.FC = () => {
               {link.name}
             </button>
           ))}
-          <button 
-              onClick={() => scrollToSection('contact')}
+          <a 
+              href="mailto:koushan@lumiagen.com?subject=Consultation%20Request"
               className="text-left text-sm font-bold text-accent-400 py-2 tracking-widest"
             >
               BOOK CALL
-            </button>
+            </a>
         </div>
       )}
     </nav>

@@ -21,30 +21,24 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
     }
   };
 
-  // Determine glow color based on service type
-  // Offer = Teal, Enterprise = Royal Blue, Standard = White/Mix, Unlimited = Purple
-  // Increased intensity (opacity 0.6)
   let glowColor = 'rgba(255, 255, 255, 0.4)';
   if (service.isOffer) {
-    glowColor = 'rgba(45, 212, 191, 0.6)'; // Teal
+    glowColor = 'rgba(45, 212, 191, 0.6)';
   } else if (service.title === "Custom Webapps" || service.title === "Mobile Apps" || service.title === "AI Voice Agent") {
-    glowColor = 'rgba(59, 130, 246, 0.6)'; // Royal Blue
+    glowColor = 'rgba(59, 130, 246, 0.6)';
   } else if (service.title === "Unlimited Support") {
-    glowColor = 'rgba(168, 85, 247, 0.6)'; // Purple
+    glowColor = 'rgba(168, 85, 247, 0.6)';
   }
 
-  // Determine Icon Hover Styles
   let iconStyle = 'bg-white/5 text-slate-300 border border-white/5';
   if (service.title === "Unlimited Support") {
      iconStyle = 'bg-white/5 text-slate-300 group-hover:text-purple-500 group-hover:bg-purple-500/10 group-hover:border-purple-500/20';
   } else if (service.isOffer) {
      iconStyle = 'bg-accent-400/10 text-accent-400 border-accent-400/20';
   } else {
-     // Standard / Enterprise -> Blue
      iconStyle = 'bg-white/5 text-slate-300 group-hover:text-royal-500 group-hover:bg-royal-500/10 group-hover:border-royal-500/20';
   }
 
-  // Determine Button Hover Styles (Consistent with Card Glow)
   let buttonHoverStyle = '';
   if (service.title === "Unlimited Support") {
     buttonHoverStyle = 'hover:border-purple-500 hover:text-white hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]';
@@ -60,12 +54,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
       onMouseMove={handleMouseMove}
       className={`group relative p-[1px] rounded-2xl bg-transparent transition-all duration-300 hover:scale-[1.02] flex flex-col h-full on-scroll-zoom delay-${Math.min(index * 100, 500)} overflow-hidden`}
     >
-      {/* Background with Noise */}
       <div className="absolute inset-0 bg-surface rounded-2xl">
          <div className="absolute inset-0 opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
       </div>
 
-      {/* Interactive Flashlight Glow for Border and Background */}
       <div 
         className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
         style={{
@@ -73,10 +65,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
         }}
       ></div>
 
-      {/* Inner Card Content */}
       <div className="relative h-full bg-void/90 rounded-2xl p-6 overflow-hidden flex flex-col border border-white/5 group-hover:border-transparent transition-colors z-10">
         
-        {/* Inner Flashlight Grid */}
         <div 
           className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition duration-500"
           style={{
@@ -86,7 +76,6 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
           }}
         ></div>
 
-        {/* Content */}
         <div className="relative z-10 flex flex-col h-full">
             <div className={`w-12 h-12 rounded-lg flex items-center justify-center mb-6 transition-colors shadow-inner ${iconStyle}`}>
               {service.icon}
@@ -198,11 +187,10 @@ const Services: React.FC = () => {
     <section id="services" className="py-20 bg-surface relative overflow-hidden">
       <div className="absolute inset-0 bg-void pointer-events-none"></div>
       
-      {/* Background Ambience */}
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-royal-500/5 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-400/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 on-scroll">
           <div className="max-w-2xl">
             <h2 className="text-accent-400 font-bold tracking-widest uppercase text-xs mb-3 flex items-center gap-2">

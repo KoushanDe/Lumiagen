@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Terminal, ShieldCheck, Zap, Code2 } from 'lucide-react';
 
 const About: React.FC = () => {
-  // Image Loading Logic
-  // 1. We try to load the local 'koushan.png' first.
-  // 2. If that fails, we fallback to the Cloudinary URL.
   const localImage = "/koushan.png";
   const fallbackImage = "https://res.cloudinary.com/dguueg6wi/image/upload/v1764860925/IMG_20251128_142903_wtxnef.jpg";
 
@@ -18,15 +15,12 @@ const About: React.FC = () => {
 
   return (
     <section id="about" className="py-32 bg-void border-y border-white/5 overflow-hidden relative">
-      {/* Background Decor */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-royal-500/5 rounded-full blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent-400/5 rounded-full blur-[120px] pointer-events-none"></div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Adjusted Grid: 7 cols for text, 5 cols for image to balance the smaller frame */}
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: Bio & Value Prop (Spans 7 cols) */}
           <div className="on-scroll-left order-2 lg:order-1 lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
                 <div className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></div>
@@ -47,7 +41,6 @@ const About: React.FC = () => {
               </p>
             </div>
 
-            {/* Value Points - Compact Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                 <div className="bg-surface/50 border border-white/5 p-4 rounded-xl flex items-start gap-3 group hover:border-accent-400/30 transition-colors">
                     <div className="w-8 h-8 rounded bg-accent-400/10 flex items-center justify-center shrink-0 text-accent-400">
@@ -88,30 +81,22 @@ const About: React.FC = () => {
             </a>
           </div>
 
-          {/* Right Column: High-Tech Framed Portrait (Spans 5 cols) */}
           <div className="on-scroll-right delay-200 order-1 lg:order-2 lg:col-span-5 flex justify-center lg:justify-end">
-            {/* Reduced width to max-w-[280px] for a sharper look */}
             <div className="relative group w-full max-w-[280px]">
                 
-                {/* Glow Behind */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent-400 to-royal-500 blur-[60px] opacity-20 group-hover:opacity-40 transition-opacity duration-700 rounded-full"></div>
                 
-                {/* Tech Frame */}
                 <div className="relative rounded-2xl p-[2px] bg-gradient-to-b from-white/10 to-transparent overflow-hidden">
                     
-                    {/* Corner Accents */}
                     <div className="absolute top-0 left-0 w-8 h-8 border-t-2 border-l-2 border-accent-400 z-20"></div>
                     <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-royal-500 z-20"></div>
                     <div className="absolute bottom-0 left-0 w-8 h-8 border-b-2 border-l-2 border-royal-500 z-20"></div>
                     <div className="absolute bottom-0 right-0 w-8 h-8 border-b-2 border-r-2 border-accent-400 z-20"></div>
 
-                    {/* Image Container */}
                     <div className="relative rounded-2xl overflow-hidden bg-surface aspect-[4/5] shadow-2xl">
-                         {/* Scanline Effect */}
                          <div className="absolute inset-0 z-10 bg-[linear-gradient(to_bottom,transparent_50%,rgba(45,212,191,0.05)_50%)] bg-[size:100%_4px] pointer-events-none"></div>
                          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-accent-400/10 to-transparent -translate-y-full group-hover:animate-scan z-10 pointer-events-none"></div>
 
-                         {/* The Image */}
                          <img 
                             src={imgSrc} 
                             onError={handleError}
@@ -119,7 +104,6 @@ const About: React.FC = () => {
                             className="absolute inset-0 w-full h-full object-cover z-0 filter grayscale group-hover:grayscale-0 transition-all duration-700 ease-in-out scale-100 group-hover:scale-105"
                          />
                          
-                         {/* Name Overlay */}
                          <div className="absolute bottom-0 left-0 w-full p-6 bg-gradient-to-t from-void via-void/80 to-transparent z-20">
                              <div className="flex items-center gap-3 mb-1">
                                 <div className="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_10px_#22c55e]"></div>
@@ -131,7 +115,6 @@ const About: React.FC = () => {
                     </div>
                 </div>
 
-                {/* Floating Badge (Decorative) */}
                 <div className="absolute -right-4 top-8 bg-surface/90 backdrop-blur-md border border-white/10 p-3 rounded-lg shadow-xl hidden sm:block animate-float">
                     <div className="flex items-center gap-3">
                         <div className="bg-royal-500/20 p-2 rounded text-royal-500">

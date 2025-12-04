@@ -4,16 +4,14 @@ import { Play, Youtube } from 'lucide-react';
 const Demo: React.FC = () => {
   const [isPlaying, setIsPlaying] = useState(false);
   
-  // YouTube details
   const youtubeVideoId = "PpFYoLgATrc";
   const youtubeUrl = `https://www.youtube.com/watch?v=${youtubeVideoId}`;
 
   return (
     <section className="py-20 bg-void relative overflow-hidden">
-      {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-royal-500/10 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10 text-center">
         <div className="mb-8 on-scroll">
           <h2 className="text-accent-400 font-bold tracking-widest uppercase text-xs mb-4">See It In Action</h2>
           <h3 className="text-3xl md:text-5xl font-bold text-white mb-6">
@@ -24,17 +22,15 @@ const Demo: React.FC = () => {
           </p>
         </div>
 
-        {/* Video Container */}
-        <div className="relative w-full max-w-4xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface pb-[56.25%] h-0 group on-scroll delay-200">
+        {/* Video Container - Compact max-w-3xl */}
+        <div className="relative w-full max-w-3xl mx-auto rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-surface pb-[56.25%] h-0 group on-scroll delay-200">
           {!isPlaying ? (
             <div 
               className="absolute top-0 left-0 w-full h-full z-20 cursor-pointer group"
               onClick={() => setIsPlaying(true)}
             >
-              {/* Cover Gradient/Image */}
               <div className="absolute inset-0 bg-gradient-to-br from-surface via-void to-surface opacity-90 transition-opacity duration-500 group-hover:opacity-100"></div>
               
-              {/* Play Button */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-20 h-20 bg-accent-500/20 rounded-full flex items-center justify-center backdrop-blur-sm border border-accent-500/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-accent-500/30">
                 <div className="w-14 h-14 bg-accent-500 rounded-full flex items-center justify-center shadow-lg shadow-accent-500/20">
                   <Play className="w-6 h-6 text-white ml-1" fill="currentColor" />
@@ -48,7 +44,7 @@ const Demo: React.FC = () => {
           ) : (
             <iframe 
                 className="absolute top-0 left-0 w-full h-full z-20"
-                src={`https://www.youtube.com/embed/${youtubeVideoId}?autoplay=1&rel=0&modestbranding=1`}
+                src={`https://www.youtube-nocookie.com/embed/${youtubeVideoId}?autoplay=1&origin=${window.location.origin}&rel=0&modestbranding=1`}
                 title="Lumiagen Automation Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
@@ -58,7 +54,6 @@ const Demo: React.FC = () => {
           )}
         </div>
 
-        {/* Fallback Link */}
         <div className="mt-8 flex justify-center on-scroll delay-300">
           <a 
             href={youtubeUrl}
