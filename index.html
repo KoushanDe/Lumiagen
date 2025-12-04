@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="https://vitejs.dev/logo.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumiagen - Deep Tech Automation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            },
+            colors: {
+              void: '#050505',
+              surface: '#111111',
+              primary: {
+                50: '#f0f9ff',
+                100: '#e0f2fe',
+                200: '#bae6fd',
+                300: '#7dd3fc',
+                400: '#38bdf8',
+                500: '#0ea5e9',
+                600: '#0284c7',
+                700: '#0369a1',
+                800: '#075985',
+                900: '#0c4a6e',
+              },
+              accent: {
+                400: '#2DD4BF', // Electric Teal
+                500: '#14b8a6',
+                600: '#0d9488',
+              },
+              royal: {
+                500: '#3B82F6', // Royal Blue
+              }
+            },
+            animation: {
+              'float': 'float 6s ease-in-out infinite',
+              'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+              'drift': 'drift 20s linear infinite',
+              'enter': 'enter 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+              'shimmer': 'shimmer 8s linear infinite',
+              'shoot': 'shoot 3s ease-in-out infinite',
+              'spin-slow': 'spin 15s linear infinite',
+              'scan': 'scan 2s linear infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-20px)' },
+              },
+              drift: {
+                '0%': { backgroundPosition: '0% 0%' },
+                '100%': { backgroundPosition: '100% 100%' },
+              },
+              enter: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+              shimmer: {
+                '0%': { backgroundPosition: '200% center' },
+                '100%': { backgroundPosition: '-200% center' },
+              },
+              shoot: {
+                '0%': { transform: 'translateY(-100%)', opacity: '1' },
+                '100%': { transform: 'translateY(100%)', opacity: '0' },
+              },
+              scan: {
+                '0%': { backgroundPosition: '0% -100%' },
+                '100%': { backgroundPosition: '0% 200%' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Custom scrollbar for a tech feel */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #050505;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #334155;
+        border-radius: 4px;
+        border: 2px solid #050505;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #475569;
+      }
+      
+      .glass-panel {
+        background: rgba(17, 17, 17, 0.6);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      
+      .text-gradient {
+        background: linear-gradient(to right, #2DD4BF, #3B82F6);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+
+      /* Shimmer Text Effect */
+      .text-shimmer {
+        background: linear-gradient(to right, #ffffff 0%, #94a3b8 20%, #ffffff 40%, #ffffff 100%);
+        background-size: 200% auto;
+        color: #000;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: shimmer 5s linear infinite;
+      }
+
+      /* Base Scroll Animation Configuration */
+      .on-scroll, 
+      .on-scroll-left, 
+      .on-scroll-right, 
+      .on-scroll-zoom,
+      .on-scroll-line {
+        opacity: 0;
+        transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+        will-change: opacity, transform;
+      }
+      
+      /* Initial States */
+      .on-scroll { transform: translateY(40px); }
+      .on-scroll-left { transform: translateX(-60px); }
+      .on-scroll-right { transform: translateX(60px); }
+      .on-scroll-zoom { transform: scale(0.9); }
+      
+      /* Line Animation Initial State */
+      .on-scroll-line {
+        opacity: 1; /* Lines are visible but scaled to 0 height */
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      
+      /* Trigger State */
+      .is-visible {
+        opacity: 1 !important;
+        transform: translate(0, 0) scale(1) !important;
+      }
+      
+      /* Specific override for line to ensure it scales to full height */
+      .on-scroll-line.is-visible {
+        transform: scaleY(1) !important;
+      }
+      
+      /* Animation Delays */
+      .delay-100 { transition-delay: 100ms; }
+      .delay-200 { transition-delay: 200ms; }
+      .delay-300 { transition-delay: 300ms; }
+      .delay-400 { transition-delay: 400ms; }
+      .delay-500 { transition-delay: 500ms; }
+      
+      /* Hero Initial State for Animation */
+      .animate-enter {
+        opacity: 0; /* Starts invisible */
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.1/",
+    "react/": "https://aistudiocdn.com/react@^19.2.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.30.0",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.555.0"
+  }
+}
+</script>
+</head>
+  <body class="bg-void text-slate-50 antialiased selection:bg-accent-400 selection:text-void">
+    <div id="root"></div>
+  </body>
+</html>
