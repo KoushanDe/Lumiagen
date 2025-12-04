@@ -138,22 +138,25 @@ const Contact: React.FC = () => {
                 </div>
             </div>
 
-            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-xs text-slate-500 font-mono">SYSTEM STATUS: ONLINE</span>
-                </div>
-                
-                <p className="text-slate-600 text-xs">
-                    &copy; {new Date().getFullYear()} Lumiagen. All Systems Operational.
-                </p>
+          <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4 relative">
+              {/* Left Side */}
+              <div className="flex items-center gap-2">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <span className="text-xs text-slate-500 font-mono">SYSTEM STATUS: ONLINE</span>
+              </div>
+              
+              {/* Middle - Centered Absolutely on Desktop */}
+              <p className="text-slate-600 text-xs md:absolute md:left-1/2 md:-translate-x-1/2">
+                  &copy; {new Date().getFullYear()} Lumiagen. All Systems Operational.
+              </p>
 
-                <div className="flex items-center gap-6">
-                    <a href="https://www.linkedin.com/in/koushan-de-04a966192/" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-white transition-colors">
-                        <Linkedin className="w-5 h-5" />
-                    </a>
-                </div>
-            </div>
+              {/* Right Side */}
+              <div className="flex items-center gap-6">
+                  <a href="https://www.linkedin.com/in/koushan-de-04a966192/" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-white transition-colors">
+                      <Linkedin className="w-5 h-5" />
+                  </a>
+              </div>
+          </div>
         </div>
     </footer>
   );
