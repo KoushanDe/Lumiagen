@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           {/* Logo */}
           <div 
             className="flex items-center gap-3 cursor-pointer group transition-all duration-300 relative"
-            onClick={() => scrollToSection('hero')}
+            onClick={() => window.location.reload()} 
           >
             {/* Logo Icon Glow (Green) */}
             <div className="absolute left-0 top-1/2 -translate-y-1/2 w-8 h-8 bg-accent-400/20 blur-xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
