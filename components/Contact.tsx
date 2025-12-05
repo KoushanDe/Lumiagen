@@ -147,7 +147,7 @@ const Contact: React.FC = () => {
               
               {/* Middle - Centered Absolutely on Desktop */}
               <p className="text-slate-600 text-xs md:absolute md:left-1/2 md:-translate-x-1/2">
-                  &copy; {new Date().getFullYear()} Lumiagen. All Systems Operational.
+                  &copy; {new Date().getFullYear()} <span onClick={() => window.location.reload()} className="cursor-pointer hover:text-white transition-colors">Lumiagen</span>. All Systems Operational.
               </p>
 
               {/* Right Side */}

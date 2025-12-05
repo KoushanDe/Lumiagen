@@ -57,8 +57,8 @@ const Hero: React.FC = () => {
           className="absolute inset-0 bg-[size:64px_64px] transition-colors duration-0 ease-linear"
           style={{
             backgroundImage: `linear-gradient(${gridColor} 1px, transparent 1px), linear-gradient(90deg, ${gridColor} 1px, transparent 1px)`,
-            maskImage: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`,
-            WebkitMaskImage: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`
+            maskImage: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`,
+            WebkitMaskImage: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, black, transparent)`
           }}
         ></div>
 
@@ -73,7 +73,7 @@ const Hero: React.FC = () => {
         <div 
           className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
           style={{
-            background: `radial-gradient(400px circle at ${mousePos.x}px ${mousePos.y}px, ${gridColor.replace('0.5', '0.15')}, transparent 40%)`
+            background: `radial-gradient(800px circle at ${mousePos.x}px ${mousePos.y}px, ${gridColor.replace('0.5', '0.15')}, transparent 40%)`
           }}
         ></div>
 
