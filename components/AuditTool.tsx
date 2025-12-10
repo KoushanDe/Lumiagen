@@ -66,7 +66,7 @@ const AuditTool: React.FC = () => {
   }, [logs]);
 
   return (
-    <section id="audit-tool" className="py-20 relative overflow-hidden bg-void">
+    <section id="audit-tool" className="py-20 relative overflow-hidden bg-void w-full px-6 md:px-12 lg:px-24">
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05]"></div>
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -76,7 +76,7 @@ const AuditTool: React.FC = () => {
           <div className="absolute top-0 left-[85%] w-[1px] h-full bg-gradient-to-b from-transparent via-royal-500/20 to-transparent opacity-0 animate-shoot [animation-delay:0.5s]"></div>
       </div>
 
-      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
+      <div className="w-full mx-auto relative z-10">
         <div className="text-center mb-12 on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-royal-500/10 border border-royal-500/20 rounded-full mb-4">
              <div className="w-1.5 h-1.5 bg-royal-500 rounded-full animate-pulse"></div>
@@ -128,7 +128,7 @@ const AuditTool: React.FC = () => {
                         id="industry"
                         value={industry}
                         onChange={(e) => setIndustry(e.target.value)}
-                        placeholder="e.g. Real Estate, Logistics, Dental Clinic"
+                        placeholder="e.g. Real Estate, Dental Clinic"
                         className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400/50 transition-all font-mono text-sm hover:bg-white/[0.07]"
                         required
                         />
@@ -142,7 +142,7 @@ const AuditTool: React.FC = () => {
                         id="bottleneck"
                         value={bottleneck}
                         onChange={(e) => setBottleneck(e.target.value)}
-                        placeholder="e.g. Manual data entry, Missed leads"
+                        placeholder="e.g. Missed Patient Calls, Expensive Receptionist"
                         className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400/50 transition-all font-mono text-sm hover:bg-white/[0.07]"
                         required
                         />

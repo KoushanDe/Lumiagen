@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ArrowRight, Zap } from 'lucide-react';
+import { ArrowRight, Zap, Mic } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
 
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = "mailto:koushan@lumiagen.com?subject=Consultation%20Request&body=Hi%20Koushan%2C%0A%0AI'd%20like%20to%20discuss%20building%20an%20automated%20system%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability.";
+    window.location.href = "mailto:koushan@lumiagen.com?subject=Voice%20Agent%20Consultation&body=Hi%20Koushan%2C%0A%0AI'm%20interested%20in%20deploying%20an%20AI%20Voice%20Agent%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability.";
   };
 
   const scrollToServices = (e: React.MouseEvent) => {
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
       id="hero" 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden group"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden group w-full"
     >
       <div className="absolute inset-0 bg-void">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -93,7 +93,7 @@ const Hero: React.FC = () => {
         
         <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm animate-enter hover:border-accent-400/30 transition-all cursor-default shadow-[0_0_30px_rgba(0,0,0,0.5)]">
           <div className="w-2 h-2 rounded-full bg-accent-400 animate-pulse shadow-[0_0_10px_#2DD4BF]"></div>
-          <span className="text-xs font-bold tracking-widest uppercase text-slate-300">Secure Your Early Access Spot</span>
+          <span className="text-xs font-bold tracking-widest uppercase text-slate-300">Now Deploying AI Voice Agents</span>
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold tracking-tight text-white mb-6 leading-[1.1] group cursor-default animate-enter [animation-delay:150ms] relative">
@@ -109,19 +109,18 @@ const Hero: React.FC = () => {
         </h1>
 
         <p className="text-lg md:text-xl xl:text-2xl text-slate-400 max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto mb-10 leading-relaxed font-light animate-enter [animation-delay:300ms]">
-          Lumiagen builds high-performance AI agents and custom web architectures. 
-          Stop trading time for money—deploy systems that work while you sleep.
+          Lumiagen specializes in <strong className="text-white font-medium">Human-Like AI Voice Agents</strong> that handle customer service, sales, and bookings 24/7. Stop trading time for money—deploy systems that work while you sleep.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-enter [animation-delay:450ms]">
           <a 
-            href="mailto:koushan@lumiagen.com?subject=Consultation%20Request"
+            href="mailto:koushan@lumiagen.com?subject=Voice%20Agent%20Inquiry"
             onClick={handleConsultation}
             className="w-full sm:w-auto px-10 py-5 bg-white text-void rounded-xl font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 group relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(45,212,191,0.4)]"
           >
             <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            Start Your Project
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            Deploy Voice Agent
+            <Mic className="w-4 h-4 group-hover:scale-110 transition-transform" />
           </a>
           <button 
             onClick={scrollToServices}
