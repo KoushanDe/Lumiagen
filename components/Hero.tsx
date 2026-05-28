@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { ArrowRight, Zap, Mic } from 'lucide-react';
+import { ArrowRight, Zap } from 'lucide-react';
 
 const Hero: React.FC = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -27,7 +27,7 @@ const Hero: React.FC = () => {
 
   const handleConsultation = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = "mailto:koushan@lumiagen.com?subject=Voice%20Agent%20Consultation&body=Hi%20Koushan%2C%0A%0AI'm%20interested%20in%20deploying%20an%20AI%20Voice%20Agent%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability.";
+    window.location.href = "mailto:koushan@lumiagen.com?subject=Consultation%20Request&body=Hi%20Koushan%2C%0A%0AI'd%20like%20to%20discuss%20building%20an%20automated%20system%20for%20my%20business.%0A%0APlease%20let%20me%20know%20your%20availability.";
   };
 
   const scrollToServices = (e: React.MouseEvent) => {
@@ -40,7 +40,7 @@ const Hero: React.FC = () => {
       id="hero" 
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      className="relative min-h-screen flex items-center pt-20 overflow-hidden group w-full"
+      className="relative min-h-screen flex items-center pt-20 overflow-hidden group"
     >
       <div className="absolute inset-0 bg-void">
         <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -91,44 +91,43 @@ const Hero: React.FC = () => {
 
       <div className="w-full px-6 md:px-12 lg:px-24 relative z-10 text-center">
         
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm animate-enter hover:border-accent-400/30 transition-all cursor-default shadow-[0_0_30px_rgba(0,0,0,0.5)]">
-          <div className="w-2 h-2 rounded-full bg-accent-400 animate-pulse shadow-[0_0_10px_#2DD4BF]"></div>
-          <span className="text-xs font-bold tracking-widest uppercase text-slate-300">Now Deploying AI Voice Agents</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-900/20 border border-red-500/30 mb-8 backdrop-blur-sm animate-enter cursor-default shadow-[0_0_30px_rgba(239,68,68,0.2)] hover:bg-red-900/30 transition-all">
+          <div className="w-2 h-2 rounded-full bg-red-500 shadow-[0_0_10px_#ef4444]"></div>
+          <span className="text-xs font-bold tracking-widest uppercase text-red-200">System Offline — Agency Closed</span>
         </div>
 
         <h1 className="text-4xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl font-bold tracking-tight text-white mb-6 leading-[1.1] group cursor-default animate-enter [animation-delay:150ms] relative">
-          <span className="relative inline-block transition-all duration-500 ease-out hover:tracking-wide">
-             <span className="absolute inset-0 blur-xl bg-white/10 opacity-50 animate-pulse-slow"></span>
-             <span className="text-shimmer">Automate the Boring,</span>
+          <span className="relative inline-block transition-all duration-500 ease-out hover:tracking-wide grayscale">
+             <span className="absolute inset-0 blur-xl bg-white/5 opacity-50 animate-pulse-slow"></span>
+             <span className="text-slate-300">Lumiagen Operations</span>
           </span> <br />
           <span className="inline-block pb-2 transition-all duration-500 ease-out hover:scale-[1.02]">
-            <span className="text-transparent bg-clip-text bg-[linear-gradient(to_right,#2DD4BF,#FFFFFF,#3B82F6,#FFFFFF,#2DD4BF)] drop-shadow-[0_0_25px_rgba(45,212,191,0.2)] animate-shimmer bg-[length:200%_auto]">
-                Scale the Extraordinary.
+            <span className="text-transparent bg-clip-text bg-[linear-gradient(to_right,#ef4444,#f87171,#ef4444)] drop-shadow-[0_0_25px_rgba(239,68,68,0.2)] animate-shimmer bg-[length:200%_auto]">
+                Ceased.
             </span>
           </span>
         </h1>
 
         <p className="text-lg md:text-xl xl:text-2xl text-slate-400 max-w-2xl xl:max-w-4xl 2xl:max-w-5xl mx-auto mb-10 leading-relaxed font-light animate-enter [animation-delay:300ms]">
-          Lumiagen specializes in <strong className="text-white font-medium">Human-Like AI Voice Agents</strong> that handle customer service, sales, and bookings 24/7. Stop trading time for money—deploy systems that work while you sleep.
+          Lumiagen has officially closed its doors. While we no longer offer agency services, our founder is actively seeking full-time <strong>Backend Software Engineering</strong> roles at product-based companies.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-6 animate-enter [animation-delay:450ms]">
-          <a 
-            href="mailto:koushan@lumiagen.com?subject=Voice%20Agent%20Inquiry"
-            onClick={handleConsultation}
-            className="w-full sm:w-auto px-10 py-5 bg-white text-void rounded-xl font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 group relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.2)] hover:shadow-[0_0_40px_rgba(45,212,191,0.4)]"
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            Deploy Voice Agent
-            <Mic className="w-4 h-4 group-hover:scale-110 transition-transform" />
-          </a>
           <button 
             onClick={scrollToServices}
-            className="w-full sm:w-auto px-10 py-5 border border-white/10 text-slate-300 hover:text-white rounded-xl font-semibold backdrop-blur-md hover:bg-white/5 hover:border-accent-400/30 transition-all flex items-center justify-center gap-2"
+            className="w-full sm:w-auto px-10 py-5 bg-white text-void rounded-xl font-bold hover:bg-slate-200 transition-all flex items-center justify-center gap-2 group relative overflow-hidden shadow-[0_0_20px_rgba(255,255,255,0.2)]"
           >
-            <Zap className="w-4 h-4 text-accent-400" />
-            View Pricing
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/50 to-transparent translate-x-[-100%] group-hover:animate-shimmer opacity-0 group-hover:opacity-100 transition-opacity"></div>
+            View Archived Services
+            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </button>
+          <a 
+            href="mailto:koushanriki007@gmail.com?subject=Backend%20Software%20Engineering%20Opportunity"
+            className="w-full sm:w-auto px-10 py-5 border border-white/10 text-slate-300 hover:text-white rounded-xl font-semibold backdrop-blur-md hover:bg-white/5 hover:border-royal-500/30 transition-all flex items-center justify-center gap-2"
+          >
+            <Zap className="w-4 h-4 text-royal-500" />
+            Contact Founder for Roles
+          </a>
         </div>
 
       </div>

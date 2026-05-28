@@ -22,22 +22,22 @@ const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           <div className="on-scroll-left order-2 lg:order-1 lg:col-span-7">
-            <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full mb-6 backdrop-blur-sm">
-                <div className="w-1.5 h-1.5 bg-accent-400 rounded-full animate-pulse"></div>
-                <span className="text-[10px] uppercase tracking-widest text-slate-300 font-bold">Agency Leadership</span>
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-royal-900/10 border border-royal-500/20 rounded-full mb-6 backdrop-blur-sm">
+                <div className="w-1.5 h-1.5 bg-royal-500 rounded-full"></div>
+                <span className="text-[10px] uppercase tracking-widest text-royal-200 font-bold">FOUNDER LOG - OPEN TO ROLES</span>
             </div>
             
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            <h3 className="text-4xl md:text-5xl font-bold text-slate-300 mb-6 leading-tight">
               Enterprise Engineering. <br/>
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-400 to-royal-500">Startup Speed.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-400 to-royal-600">Now seeking Backend Roles.</span>
             </h3>
             
             <div className="space-y-6 text-slate-400 leading-relaxed text-lg mb-10">
               <p>
-                Hi, I’m <span className="text-white font-semibold">Koushan</span>, Founder of Lumiagen. I am a Software Engineer with 3+ years of experience architecting <span className="text-white">highly scalable systems</span> for industry giants like <span className="text-white">Razorpay</span> and <span className="text-white">Navi</span>.
+                Hi, I’m <span className="text-white font-semibold">Koushan</span>, Founder of Lumiagen. We built incredibly robust automation architectures and AI agents aimed at scaling operations effortlessly.
               </p>
               <p>
-                I founded this agency to bridge the gap between "hacky" MVPs and enterprise-grade software. We help businesses launch AI-Powered workflows and robust platforms that are built to scale from Day 1.
+                After attempting to scale Lumiagen, the agency has officially closed its doors. While the journey of building AI agents and custom architectures was highly educational, I found my true passion lies in building core product infrastructure. I am now actively seeking Backend Software Engineering roles at product-based companies where I can focus on scalable, high-performance systems.
               </p>
             </div>
 
@@ -72,11 +72,11 @@ const About: React.FC = () => {
             </div>
 
             <a 
-              href="mailto:koushan@lumiagen.com?subject=Call%20Request"
-              className="inline-flex items-center justify-center px-8 py-4 bg-white text-void font-bold rounded-xl hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(45,212,191,0.3)] group"
+              href="mailto:koushanriki007@gmail.com?subject=Backend%20Software%20Engineering%20Opportunity"
+              className="inline-flex items-center justify-center px-8 py-4 bg-white text-void font-bold rounded-xl hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.1)] hover:shadow-[0_0_30px_rgba(59,130,246,0.3)] group"
             >
               <span className="group-hover:translate-x-1 transition-transform inline-flex items-center gap-2">
-                 Book a Consultation <Zap className="w-4 h-4 text-royal-500" />
+                 Discuss Opportunities <Zap className="w-4 h-4 text-royal-500" />
               </span>
             </a>
           </div>

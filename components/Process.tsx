@@ -83,7 +83,7 @@ const Process: React.FC = () => {
       <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="mb-16 text-center on-scroll-zoom">
           <h2 className="text-accent-400 font-bold tracking-widest uppercase text-xs mb-3">The Workflow</h2>
-          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Work</h3>
+          <h3 className="text-3xl md:text-4xl font-bold text-white mb-4">How We Worked</h3>
           <p className="text-slate-400 text-lg">A clear, transparent path to digital transformation.</p>
         </div>
 

@@ -17,14 +17,14 @@ const Contact: React.FC = () => {
   };
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('koushan@lumiagen.com');
+    navigator.clipboard.writeText('koushanriki007@gmail.com');
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   const handleBooking = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = "mailto:koushan@lumiagen.com?subject=Priority%20Project%20Inquiry";
+    window.location.href = "mailto:koushanriki007@gmail.com?subject=Backend%20Software%20Engineering%20Opportunity";
   };
 
   return (
@@ -51,10 +51,10 @@ const Contact: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-16 mb-20">
                 <div className="on-scroll-left">
                     <h2 className="text-4xl md:text-5xl font-bold text-white mb-8">
-                       Ready to <span className="text-gradient">Architect the Future?</span>
+                       Let's build <span className="text-gradient">Backend Systems</span>
                     </h2>
                     <p className="text-slate-400 text-lg mb-10 max-w-md leading-relaxed">
-                        We don't just build software; we engineer competitive advantages. Let's discuss your automation infrastructure.
+                        Lumiagen is no longer accepting agency work. I am currently open to full-time Backend Software Engineering roles at product-based companies.
                     </p>
 
                     <div className="space-y-4">
@@ -65,7 +65,7 @@ const Contact: React.FC = () => {
                                 </div>
                                 <div>
                                     <p className="text-[10px] uppercase tracking-widest text-slate-500 font-bold">Email Direct</p>
-                                    <p className="text-white font-mono text-sm">koushan@lumiagen.com</p>
+                                    <p className="text-white font-mono text-sm">koushanriki007@gmail.com</p>
                                 </div>
                              </div>
                              <button 
@@ -116,21 +116,21 @@ const Contact: React.FC = () => {
                                     <Calendar className="w-8 h-8 text-accent-400" />
                                  </div>
                                  
-                                 <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">Fast-Track Your Project</h3>
+                                 <h3 className="text-2xl font-bold text-white mb-4 drop-shadow-lg">Get in Touch</h3>
                                  <p className="text-slate-300 text-sm mb-8 leading-relaxed font-light">
-                                    Skip the back-and-forth. Send a priority inquiry to discuss your custom solution immediately.
+                                    If you are hiring for backend engineering roles or product-focused teams, I'd love to connect.
                                  </p>
 
                                  <button 
                                    onClick={handleBooking}
-                                   className="w-full py-6 text-lg font-bold uppercase tracking-widest text-white bg-accent-400 rounded-lg shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(45,212,191,0.6)] hover:bg-white hover:text-accent-400 transition-all duration-500 transform hover:scale-[1.02] flex items-center justify-center gap-3 group/btn relative z-20"
+                                   className="w-full py-6 text-lg font-bold uppercase tracking-widest text-white bg-royal-500 rounded-lg shadow-[0_0_25px_rgba(255,255,255,0.3)] hover:shadow-[0_0_50px_rgba(59,130,246,0.6)] hover:bg-white hover:text-royal-500 transition-all duration-500 transform hover:scale-[1.02] flex items-center justify-center gap-3 group/btn relative z-20"
                                  >
-                                    Book Priority Call
+                                    Email for Opportunities
                                     <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
                                  </button>
                                  
                                  <p className="mt-4 text-[10px] text-slate-500 uppercase tracking-wider font-semibold">
-                                    Response time: &lt; 12 Hours
+                                    Status: Open to Work
                                  </p>
                              </div>
                         </div>
@@ -142,12 +142,12 @@ const Contact: React.FC = () => {
               {/* Left Side */}
               <div className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-                  <span className="text-xs text-slate-500 font-mono">SYSTEM STATUS: ONLINE</span>
+                  <span className="text-xs text-slate-500 font-mono">System status : Signed off</span>
               </div>
               
               {/* Middle - Centered Absolutely on Desktop */}
               <p className="text-slate-600 text-xs md:absolute md:left-1/2 md:-translate-x-1/2">
-                  &copy; {new Date().getFullYear()} <span onClick={() => window.location.reload()} className="cursor-pointer hover:text-white transition-colors">Lumiagen</span>. All Systems Operational.
+                  &copy; {new Date().getFullYear()} <span onClick={() => window.location.reload()} className="cursor-pointer hover:text-white transition-colors">Lumiagen</span>. Operations Ceased.
               </p>
 
               {/* Right Side */}

@@ -66,7 +66,7 @@ const AuditTool: React.FC = () => {
   }, [logs]);
 
   return (
-    <section id="audit-tool" className="py-20 relative overflow-hidden bg-void w-full px-6 md:px-12 lg:px-24">
+    <section id="audit-tool" className="py-20 relative overflow-hidden bg-void">
       <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-[0.05]"></div>
       
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -76,7 +76,7 @@ const AuditTool: React.FC = () => {
           <div className="absolute top-0 left-[85%] w-[1px] h-full bg-gradient-to-b from-transparent via-royal-500/20 to-transparent opacity-0 animate-shoot [animation-delay:0.5s]"></div>
       </div>
 
-      <div className="w-full mx-auto relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="text-center mb-12 on-scroll">
           <div className="inline-flex items-center gap-2 px-3 py-1 bg-royal-500/10 border border-royal-500/20 rounded-full mb-4">
              <div className="w-1.5 h-1.5 bg-royal-500 rounded-full animate-pulse"></div>
@@ -84,7 +84,7 @@ const AuditTool: React.FC = () => {
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Free AI Opportunity Audit</h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto">
-            Input your parameters. Our system will construct a bespoke automation architecture for your business instantly.
+            This tool remains online and free to use for anyone analyzing business bottlenecks.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ const AuditTool: React.FC = () => {
                         id="industry"
                         value={industry}
                         onChange={(e) => setIndustry(e.target.value)}
-                        placeholder="e.g. Real Estate, Dental Clinic"
+                        placeholder="e.g. Real Estate, Logistics, Dental Clinic"
                         className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400/50 transition-all font-mono text-sm hover:bg-white/[0.07]"
                         required
                         />
@@ -142,7 +142,7 @@ const AuditTool: React.FC = () => {
                         id="bottleneck"
                         value={bottleneck}
                         onChange={(e) => setBottleneck(e.target.value)}
-                        placeholder="e.g. Missed Patient Calls, Expensive Receptionist"
+                        placeholder="e.g. Manual data entry, Missed leads"
                         className="w-full px-5 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-slate-600 focus:outline-none focus:border-accent-400 focus:ring-1 focus:ring-accent-400/50 transition-all font-mono text-sm hover:bg-white/[0.07]"
                         required
                         />
@@ -259,10 +259,10 @@ const AuditTool: React.FC = () => {
             <div className="p-4 border-t border-white/10 bg-white/5 relative z-10 flex flex-col md:flex-row gap-4 items-center justify-between">
               <p className="text-xs text-slate-500 font-mono hidden md:block">CONFIDENTIAL // LUMIAGEN GENERATED REPORT</p>
               <a 
-                href={`mailto:koushan@lumiagen.com?subject=Implement%20Strategy:%20${encodeURIComponent(result.title)}&body=I'd%20like%20to%20discuss%20implementing%20the%20${encodeURIComponent(result.title)}%20strategy.`}
+                href={`mailto:koushanriki007@gmail.com?subject=Waitlist%20Inquiry:%20${encodeURIComponent(result.title)}&body=I'd%20like%20to%20join%20the%20waitlist%20for%20implementing%20the%20${encodeURIComponent(result.title)}%20strategy.`}
                 className="w-full md:w-auto px-8 py-3 bg-accent-400 text-void font-bold rounded-lg hover:bg-white transition-all shadow-[0_0_20px_rgba(45,212,191,0.3)] hover:shadow-[0_0_30px_rgba(255,255,255,0.5)] uppercase tracking-wide text-xs flex items-center justify-center gap-2"
               >
-                <Cpu className="w-4 h-4" /> Execute Strategy
+                <Cpu className="w-4 h-4" /> Join Implementation Waitlist
               </a>
             </div>
           </div>

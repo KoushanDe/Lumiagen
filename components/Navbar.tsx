@@ -88,13 +88,13 @@ const Navbar: React.FC = () => {
           {/* CTA */}
           <div className="hidden md:block">
             <a 
-              href="mailto:koushan@lumiagen.com?subject=Consultation%20Request"
+              href="mailto:koushanriki007@gmail.com?subject=Backend%20Software%20Engineering%20Opportunity"
               className="inline-block px-6 py-2.5 bg-void border text-xs font-bold uppercase tracking-wider rounded transition-all duration-500
-                         border-accent-400/50 text-white 
-                         shadow-[0_0_20px_#2DD4BF] animate-pulse-slow
-                         hover:border-royal-500 hover:shadow-[0_0_30px_#3B82F6] hover:bg-royal-500/10 hover:text-white hover:animate-none"
+                         border-royal-500/50 text-royal-100 
+                         shadow-[0_0_20px_#3B82F6] animate-pulse-slow
+                         hover:border-royal-600 hover:shadow-[0_0_30px_#2563eb] hover:bg-royal-900/20 hover:text-white hover:animate-none"
             >
-              Book Call
+              HIRE FOUNDER
             </a>
           </div>
 
@@ -123,10 +123,10 @@ const Navbar: React.FC = () => {
             </button>
           ))}
           <a 
-              href="mailto:koushan@lumiagen.com?subject=Consultation%20Request"
-              className="text-left text-sm font-bold text-accent-400 py-2 tracking-widest"
+              href="mailto:koushanriki007@gmail.com?subject=Backend%20Software%20Engineering%20Opportunity"
+              className="text-left text-sm font-bold text-royal-500 py-2 tracking-widest"
             >
-              BOOK CALL
+              HIRE FOUNDER
             </a>
         </div>
       )}

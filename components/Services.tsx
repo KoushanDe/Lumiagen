@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Bot, Globe, Smartphone, Mic, Infinity, Code2, ArrowUpRight, Sparkles, Star } from 'lucide-react';
+import { Bot, Globe, Smartphone, Mic, Infinity, Code2, ArrowUpRight, Sparkles } from 'lucide-react';
 
 interface ServiceCardProps {
   service: any;
@@ -22,23 +22,19 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
   };
 
   let glowColor = 'rgba(255, 255, 255, 0.4)';
-  if (service.isFlagship) {
-     glowColor = 'rgba(45, 212, 191, 0.6)'; // Teal for Flagship
-  } else if (service.isOffer) {
-    glowColor = 'rgba(59, 130, 246, 0.6)'; // Blue for secondary offers
+  if (service.isOffer) {
+    glowColor = 'rgba(45, 212, 191, 0.6)';
+  } else if (service.title === "Custom Webapps" || service.title === "Mobile Apps" || service.title === "AI Voice Agent") {
+    glowColor = 'rgba(59, 130, 246, 0.6)';
   } else if (service.title === "Unlimited Support") {
     glowColor = 'rgba(168, 85, 247, 0.6)';
-  } else {
-    glowColor = 'rgba(59, 130, 246, 0.4)';
   }
 
   let iconStyle = 'bg-white/5 text-slate-300 border border-white/5';
   if (service.title === "Unlimited Support") {
      iconStyle = 'bg-white/5 text-slate-300 group-hover:text-purple-500 group-hover:bg-purple-500/10 group-hover:border-purple-500/20';
-  } else if (service.isFlagship) {
-     iconStyle = 'bg-accent-400/10 text-accent-400 border-accent-400/20';
   } else if (service.isOffer) {
-     iconStyle = 'bg-royal-500/10 text-royal-500 border-royal-500/20';
+     iconStyle = 'bg-accent-400/10 text-accent-400 border-accent-400/20';
   } else {
      iconStyle = 'bg-white/5 text-slate-300 group-hover:text-royal-500 group-hover:bg-royal-500/10 group-hover:border-royal-500/20';
   }
@@ -46,7 +42,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
   let buttonHoverStyle = '';
   if (service.title === "Unlimited Support") {
     buttonHoverStyle = 'hover:border-purple-500 hover:text-white hover:bg-purple-500/10 hover:shadow-[0_0_20px_rgba(168,85,247,0.4)]';
-  } else if (service.isFlagship) {
+  } else if (service.isOffer) {
     buttonHoverStyle = 'hover:border-accent-400 hover:text-white hover:bg-accent-400/10 hover:shadow-[0_0_20px_rgba(45,212,191,0.4)]';
   } else {
     buttonHoverStyle = 'hover:border-royal-500 hover:text-white hover:bg-royal-500/10 hover:shadow-[0_0_20px_rgba(59,130,246,0.4)]';
@@ -89,13 +85,8 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
                <h4 className="text-xl font-bold text-white mb-2 group-hover:drop-shadow-[0_0_8px_rgba(255,255,255,0.5)] transition-all">
                 {service.title}
               </h4>
-              {service.isFlagship && (
-                <span className="px-2 py-1 rounded bg-accent-400/10 border border-accent-400/20 text-[10px] font-bold uppercase tracking-wider text-accent-400 flex items-center gap-1 shadow-[0_0_10px_rgba(45,212,191,0.2)]">
-                  <Star className="w-3 h-3" /> Flagship
-                </span>
-              )}
               {service.isOffer && (
-                <span className="px-2 py-1 rounded bg-royal-500/10 border border-royal-500/20 text-[10px] font-bold uppercase tracking-wider text-royal-500 flex items-center gap-1">
+                <span className="px-2 py-1 rounded bg-accent-400/10 border border-accent-400/20 text-[10px] font-bold uppercase tracking-wider text-accent-400 flex items-center gap-1 shadow-[0_0_10px_rgba(45,212,191,0.2)]">
                   <Sparkles className="w-3 h-3" /> Offer
                 </span>
               )}
@@ -111,7 +102,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
                     {service.oldPrice && (
                       <span className="text-sm text-slate-400 line-through decoration-slate-600 decoration-2 font-mono mb-1 opacity-80 font-medium">{service.oldPrice}</span>
                     )}
-                    <span className={`text-2xl font-bold tracking-tight ${service.isFlagship ? 'text-accent-400 drop-shadow-[0_0_10px_rgba(45,212,191,0.3)]' : (service.price === 'FREE' ? 'text-royal-500' : 'text-white')}`}>
+                    <span className={`text-2xl font-bold tracking-tight ${service.price === 'FREE' ? 'text-accent-400 drop-shadow-[0_0_10px_rgba(45,212,191,0.3)]' : 'text-white'}`}>
                       {service.price}
                     </span>
                     {service.subtext && (
@@ -139,80 +130,84 @@ const ServiceCard: React.FC<ServiceCardProps> = ({ service, index, handleBooking
 const Services: React.FC = () => {
   const handleBooking = (e: React.MouseEvent) => {
     e.preventDefault();
-    window.location.href = "mailto:koushan@lumiagen.com?subject=Project%20Inquiry";
+    window.location.href = "mailto:koushanriki007@gmail.com?subject=Project%20Inquiry";
   };
 
   const services = [
     {
       title: "AI Voice Agent",
-      description: "24/7 Inbound/Outbound human-like voice assistants. Handles bookings, customer support, and sales calls instantly.",
-      price: "Book for Quote",
-      isFlagship: true,
+      description: "Human-like voice assistants to handle inbound/outbound calls 24/7.",
+      price: "UNAVAILABLE",
+      oldPrice: "$499",
+      subtext: "Service Discontinued",
+      isOffer: false,
       icon: <Mic className="w-6 h-6" />,
-      action: "Book Demo"
+      action: "Operations Ceased"
     },
     {
       title: "Automated Booking Flow",
       description: "Seamlessly capture leads and schedule appointments without lifting a finger.",
-      price: "$700",
-      oldPrice: "$1500",
-      isOffer: true,
+      price: "UNAVAILABLE",
+      oldPrice: "$199",
+      subtext: "Service Discontinued",
+      isOffer: false,
       icon: <Bot className="w-6 h-6" />,
-      action: "Get Started"
+      action: "Operations Ceased"
     },
     {
       title: "Modern Website",
       description: "High-conversion, aesthetic landing page. Responsive and lightning fast.",
-      price: "FREE",
-      oldPrice: "$500",
-      subtext: "With Booking Flow purchase",
-      isOffer: true,
+      price: "UNAVAILABLE",
+      oldPrice: "$99",
+      subtext: "Service Discontinued",
+      isOffer: false,
       icon: <Globe className="w-6 h-6" />,
-      action: "Claim Offer"
+      action: "Operations Ceased"
     },
     {
       title: "Custom Webapps",
       description: "Tailor-made SaaS platforms, internal tools, or client portals built on modern stacks.",
-      price: "Book for Quote",
+      price: "UNAVAILABLE",
       icon: <Code2 className="w-6 h-6" />,
-      action: "Book Call"
+      action: "Operations Ceased"
     },
     {
       title: "Mobile Apps",
       description: "Native-feel iOS and Android applications. PWA or React Native.",
-      price: "Book for Quote",
+      price: "UNAVAILABLE",
       icon: <Smartphone className="w-6 h-6" />,
-      action: "Book Call"
+      action: "Operations Ceased"
     },
     {
       title: "Unlimited Support",
       description: "Ongoing maintenance, updates, and tweaks to keep your systems running perfectly.",
-      price: "$250/mo",
+      price: "UNAVAILABLE",
+      oldPrice: "$99/mo",
       icon: <Infinity className="w-6 h-6" />,
-      action: "Subscribe"
+      action: "Operations Ceased"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-surface relative overflow-hidden w-full px-6 md:px-12 lg:px-24">
+    <section id="services" className="py-20 bg-surface relative overflow-hidden">
       <div className="absolute inset-0 bg-void pointer-events-none"></div>
       
       <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-royal-500/5 rounded-full blur-[100px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent-400/5 rounded-full blur-[100px] pointer-events-none"></div>
 
-      <div className="w-full mx-auto relative z-10">
+      <div className="w-full px-6 md:px-12 lg:px-24 mx-auto relative z-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6 on-scroll">
           <div className="max-w-2xl">
-            <h2 className="text-accent-400 font-bold tracking-widest uppercase text-xs mb-3 flex items-center gap-2">
-               <span className="w-8 h-[1px] bg-accent-400"></span> Our Services
+            <h2 className="text-red-500 font-bold tracking-widest uppercase text-xs mb-3 flex items-center gap-2">
+               <span className="w-8 h-[1px] bg-red-500"></span> Archived Services
             </h2>
-            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">Engineering for Scale.</h3>
+            <h3 className="text-3xl md:text-5xl font-bold text-white mb-4">Operations Ceased.</h3>
             <p className="text-slate-400 text-lg">
-              Transparent pricing. Enterprise-grade quality. No hidden fees.
+              Lumiagen is no longer taking on new clients. Below is an archive of the services we previously provided.
             </p>
           </div>
-          <a href="mailto:koushan@lumiagen.com" className="group text-white border-b border-white/20 pb-1 hover:border-accent-400 transition-all flex items-center gap-2 text-sm font-medium tracking-wide">
-            Get a custom proposal <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
+          <a href="mailto:koushanriki007@gmail.com" className="group text-white border-b border-white/20 pb-1 hover:border-royal-500 transition-all flex items-center gap-2 text-sm font-medium tracking-wide">
+            Contact the Founder <ArrowUpRight className="w-4 h-4 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform" />
           </a>
         </div>
 
